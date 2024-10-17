@@ -16,6 +16,7 @@ class _CoffeeOrderScreenState extends State<CoffeeOrderScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -27,9 +28,9 @@ class _CoffeeOrderScreenState extends State<CoffeeOrderScreen> {
                 children: [
                   Image.asset(
                     'assets/coffee.jpg', // Add your own image path here
-                    height: 500,
+                    height: width > 800 ? 500 : 500,
                     width: double.infinity,
-                    fit: BoxFit.fitWidth,
+                    fit: width > 800 ? BoxFit.contain : BoxFit.fitWidth,
                   ),
                 ],
               ),
