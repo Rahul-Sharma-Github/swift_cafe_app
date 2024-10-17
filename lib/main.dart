@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/login_screen.dart';
+import 'Screens/coffe_order_screen.dart';
+// import 'Screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showSemanticsDebugger: false,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home: const CoffeeOrderScreen(),
     );
   }
 }
