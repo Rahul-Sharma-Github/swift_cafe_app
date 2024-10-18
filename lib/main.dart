@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home:
+          const HomePage(), // Change the Screen/Page to see different screen on App Startup
     );
   }
 }
