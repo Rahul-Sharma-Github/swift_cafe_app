@@ -242,7 +242,7 @@ class BeverageCard extends StatelessWidget {
         children: [
           Image.asset(
             'assets/card2.png',
-            height: 80,
+            height: 120,
           ),
           const Text(
             'Hot Cappuccino',
@@ -252,32 +252,47 @@ class BeverageCard extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          const Text(
-            'Espresso, Steamed Milk',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 12,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // ignore: prefer_const_constructors
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Espresso, Steamed Milk',
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.star, color: Colors.yellow, size: 14),
+                        Text(
+                          '4.9',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          ' (458)',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                FloatingActionButton(
+                  onPressed: () {},
+                  mini: true,
+                  backgroundColor: Colors.green,
+                  child: const Icon(Icons.add),
+                ),
+              ],
             ),
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.star, color: Colors.yellow, size: 14),
-              Text(
-                '4.9',
-                style: TextStyle(color: Colors.white),
-              ),
-              Text(
-                ' (458)',
-                style: TextStyle(color: Colors.white70),
-              ),
-            ],
-          ),
-          FloatingActionButton(
-            onPressed: () {},
-            mini: true,
-            backgroundColor: Colors.green,
-            child: const Icon(Icons.add),
           ),
         ],
       ),
@@ -301,46 +316,71 @@ class LatteCard extends StatelessWidget {
           child: Row(
             children: [
               const Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Lattè',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                child: Padding(
+                  padding: EdgeInsets.only(right: 25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Lattè',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
+                      Row(
+                        children: [
+                          Text(
+                            '4.9',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Icon(Icons.star, color: Colors.yellow, size: 14),
+                          Text(
+                            ' (458)',
+                            style: TextStyle(color: Colors.white70),
+                          ),
+                          SizedBox(width: 5),
+                          Icon(Icons.square, color: Colors.green, size: 14),
+                        ],
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        'Caffè latte is a milk coffee that is made up of one or two shots of espresso, steamed milk, and a thin layer of froth.',
+                        style: TextStyle(color: Colors.white70, fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 100,
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      'assets/detail1.png',
+                      height: 90,
+                      width: 110,
+                      fit: BoxFit.cover,
                     ),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.yellow, size: 14),
-                        Text(
-                          '4.9',
-                          style: TextStyle(color: Colors.white),
+                    Positioned(
+                      bottom: 0,
+                      left: 25,
+                      right: 25,
+                      child: SizedBox(
+                        height: 20,
+                        child: FloatingActionButton(
+                          onPressed: () {},
+                          backgroundColor: Colors.green,
+                          child: const Text(
+                            'ADD',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
-                        Text(
-                          ' (458)',
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 5),
-                    Text(
-                      'Caffè latte is a milk coffee that is made up of one or two shots of espresso, steamed milk, and a thin layer of froth.',
-                      style: TextStyle(color: Colors.white70, fontSize: 12),
+                      ),
                     ),
                   ],
                 ),
-              ),
-              Image.asset(
-                'assets/detail1.png',
-                height: 80,
-              ),
-              FloatingActionButton(
-                onPressed: () {},
-                backgroundColor: Colors.green,
-                child: const Text('ADD'),
               ),
             ],
           ),
